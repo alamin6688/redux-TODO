@@ -17,8 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { addUser } from "@/redux/features/counter/user/userSlice";
-import { useAppDispatch } from "@/redux/hook";
+// import { useAppDispatch } from "@/redux/hook";
 import { IUser } from "@/types";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -30,10 +29,10 @@ export function AddUserModal() {
       name: "",
     },
   });
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    dispatch(addUser(data as IUser));
+  const onSubmit: SubmitHandler<FieldValues> = () => {
+    // dispatch(addUser(data as IUser));
     setOpen(false);
     form.reset();
   };

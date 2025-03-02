@@ -1,12 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
-import {
-  deleteTask,
-  toggleCompleteStatus,
-} from "@/redux/features/counter/task/taskSlice";
-import { selectUsers } from "@/redux/features/counter/user/userSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { ITask } from "@/types";
 import { AiFillDelete } from "react-icons/ai";
 
@@ -15,10 +9,9 @@ interface IProps {
 }
 
 const TaskCard = ({ task }: IProps) => {
-  const dispatch = useAppDispatch();
-  const users = useAppSelector(selectUsers);
 
-  const assignedUser = users.find((user) => user.id === task.assignedTo);
+
+  // const assignedUser = users.find((user) => user.id === task.assignedTo);
 
   return (
     <div className="border mt-8 px-5 py-3 rounded-md">
@@ -37,7 +30,7 @@ const TaskCard = ({ task }: IProps) => {
         </div>
         <div className="flex gap-3 items-center">
           <Button
-            onClick={() => dispatch(deleteTask(task.id))}
+            // onClick={() => dispatch(deleteTask(task.id))}
             variant="link"
             className="p-0 text-red-500"
           >
@@ -45,12 +38,12 @@ const TaskCard = ({ task }: IProps) => {
           </Button>
           <Checkbox
             checked={task.isCompleted}
-            onClick={() => dispatch(toggleCompleteStatus(task.id))}
+            // onClick={() => dispatch(toggleCompleteStatus(task.id))}
           />
         </div>
       </div>
       <div>
-        <p>Assigned To -{assignedUser ? assignedUser.name : "No one"}</p>
+        <p>Assigned To - Alamin</p>
         <p className="text-gray-500">{task.description}</p>
       </div>
     </div>

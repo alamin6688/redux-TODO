@@ -1,21 +1,29 @@
 import { AddTaskModal } from "@/components/module/tasks/addTaskModal";
-import TaskCard from "@/components/module/tasks/taskCard";
+// import TaskCard from "@/components/module/tasks/taskCard";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  selectFilter,
-  selectTasks,
-  updateFilter,
-} from "@/redux/features/counter/task/taskSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
 
 const Tasks = () => {
-  const tasks = useAppSelector(selectTasks);
-  const filters = useAppSelector(selectFilter);
+  // const tasks = [
+  //   {
+  //     id: "1",
+  //     title: "Task 1",
+  //     description: "This is a task",
+  //     priority: "low",
+  //   },
+  //   {
+  //     id: "2",
+  //     title: "Task 2",
+  //     description: "This is a task",
+  //     priority: "medium",
+  //   },
+  //   {
+  //     id: "3",
+  //     title: "Task 3",
+  //     description: "This is a task",
+  //     priority: "high",
+  //   },
+  // ];
 
-  const dispatch = useAppDispatch();
-
-  console.log(tasks);
-  console.log(filters);
   return (
     <div className="w-full mx-auto">
       <div className="flex justify-end items-center gap-4 mt-6">
@@ -23,25 +31,25 @@ const Tasks = () => {
         <Tabs defaultValue="all">
           <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("all"))}
+              // onClick={() => dispatch(updateFilter("all"))}
               value="all"
             >
               All
             </TabsTrigger>
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("low"))}
+              // onClick={() => dispatch(updateFilter("low"))}
               value="low"
             >
               Low
             </TabsTrigger>
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("medium"))}
+              // onClick={() => dispatch(updateFilter("medium"))}
               value="medium"
             >
               Medium
             </TabsTrigger>
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("high"))}
+              // onClick={() => dispatch(updateFilter("high"))}
               value="high"
             >
               High
@@ -51,13 +59,10 @@ const Tasks = () => {
         <AddTaskModal />
       </div>
       <div className="space-y-5 mt-4">
-        {tasks.map((task) => {
-          return <TaskCard task={task} key={task.id} />;
-        })}
+        {/* {tasks.map((task) => {
+          return <TaskCard tasks={task} key={task.id} />;
+        })} */}
       </div>
-
-
-
     </div>
   );
 };
